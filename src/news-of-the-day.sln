@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "news-of-the-day", "news-of-the-day\news-of-the-day.csproj", "{CBFAB33D-D886-46D9-AEA4-18D196900579}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Debug|x64.ActiveCfg = Debug|x64
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Debug|x64.Build.0 = Debug|x64
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Release|x64.ActiveCfg = Release|x64
+		{CBFAB33D-D886-46D9-AEA4-18D196900579}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {936D8B77-C323-441C-9A0C-5BBC18808C95}
+	EndGlobalSection
+EndGlobal
