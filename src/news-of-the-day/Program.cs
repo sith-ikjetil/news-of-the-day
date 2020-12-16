@@ -38,7 +38,7 @@ namespace news_of_the_day
 					{
 						var rnd = new Random();
 						var item = atom.Entries[rnd.Next(0, numItems - 1)];
-						PrintAtomItem(item);
+						PrintAtomItem(atom, item);
 					}
 					return;
 				}
@@ -51,7 +51,7 @@ namespace news_of_the_day
 					{
 						var rnd = new Random();
 						var item = rdf.Items[rnd.Next(0, numItems - 1)];
-						PrintRdfItem(item);
+						PrintRdfItem(rdf, item);
 					}
 					return;
 				}
@@ -64,7 +64,7 @@ namespace news_of_the_day
 					{
 						var rnd = new Random();
 						var item = rss.Channel.Items[rnd.Next(0, numItems - 1)];
-						PrintRssItem(item);
+						PrintRssItem(rss, item);
 					}
 					return;
 				}
@@ -77,35 +77,36 @@ namespace news_of_the_day
 			}
 		}
 
-		static void PrintAtomItem(AtomEntry item)
+		static void PrintAtomItem(Atom atom, AtomEntry item)
 		{
 			PrintHeader();
 			Console.Write(item.Content.Content);
-			PrintFooter(item.Title.Text);
+			PrintFooter(item.Title.Text, atom.Title.Text);
 		}
 
-		static void PrintRdfItem(RdfItem item)
+		static void PrintRdfItem(Rdf rdf, RdfItem item)
 		{
 			PrintHeader();
 			Console.Write(item.Description);
-			PrintFooter(item.Title);
+			PrintFooter(item.Title, rdf.Channel.Title);
 		}
 
-		static void PrintRssItem( RssItem item )
+		static void PrintRssItem( Rss rss, RssItem item )
 		{
 			PrintHeader();
 			Console.Write(item.Description);
-			PrintFooter(item.Title);
+			PrintFooter(item.Title, rss.Channel.Title);
 		}
 
 		static void PrintHeader()
 		{
 			Console.WriteLine("== News of the Day ==");
 		}
-		static void PrintFooter(string text)
+		static void PrintFooter(string footer1, string footer2)
 		{
 			Console.WriteLine();
-			Console.WriteLine($"    :: {text}");
+			Console.WriteLine($"    :: {footer1}");
+			Console.WriteLine($"    :: {footer2}");
 		}
 	}
 }
