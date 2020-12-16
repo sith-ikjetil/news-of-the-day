@@ -5,6 +5,8 @@ Default url is a bcc news url rss feed.
 Use of a custom rss url: 
 ```
 news-of-the-day.exe <URL>  
+or
+dotnet news-of-the-day.dll
 ```
   
 Example:  
