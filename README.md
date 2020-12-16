@@ -1,12 +1,18 @@
 # news-of-the-day
 Prints out a random news of the day.  
   
-Default url is a bcc news url rss feed.  
-Use of a custom rss url: 
+Default URL is a BBC news URL.  
+URL must be an ATOM, RDF or RSS URL.  
+  
+Usage: 
 ```
+news-of-the-day.exe
+or
 news-of-the-day.exe <URL>  
 or
 dotnet news-of-the-day.dll
+or
+dotnet news-of-the-day.dll <URL>
 ```
   
 Example:  
