@@ -10,7 +10,7 @@ namespace news_of_the_day
 	{
 		static void Main(string[] args)
 		{
-			var url = "http://www.itavisen.no/feed";//"http://feeds.bbci.co.uk/news/world/rss.xml";
+			var url = "http://feeds.bbci.co.uk/news/world/rss.xml";
 			
 			if ( args.Length <= 1 )
 			{
