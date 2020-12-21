@@ -124,7 +124,7 @@ namespace news_of_the_day
 			{
 				content = content.ItsRemove(s);
 			}
-			content = content.ItsRemove("\n");
+			content = content.Replace("\n", " ");
 
 			return content;
 		}
