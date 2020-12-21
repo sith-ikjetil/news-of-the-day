@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="ItSoftware.NDN.Core">
+      <HintPath>ItSoftware.NDN.Core.dll</HintPath>
+    </Reference>
     <Reference Include="ItSoftware.NDN.Syndication">
       <HintPath>ItSoftware.NDN.Syndication.dll</HintPath>
     </Reference>

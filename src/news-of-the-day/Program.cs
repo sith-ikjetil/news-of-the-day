@@ -3,13 +3,14 @@ using ItSoftware.Syndication;
 using ItSoftware.Syndication.Atom;
 using ItSoftware.Syndication.Rdf;
 using ItSoftware.Syndication.Rss;
+using ItSoftware.Core.Extensions;
 namespace news_of_the_day
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			var url = "http://feeds.bbci.co.uk/news/world/rss.xml";
+			var url = "http://www.itavisen.no/feed";//"http://feeds.bbci.co.uk/news/world/rss.xml";
 			
 			if ( args.Length <= 1 )
 			{
@@ -80,21 +81,21 @@ namespace news_of_the_day
 		static void PrintAtomItem(Atom atom, AtomEntry item)
 		{
 			PrintHeader();
-			Console.Write(item.Content.Content);
+			Console.Write(NormalizeContent(item.Content.Content));
 			PrintFooter(item.Title.Text, atom.Title.Text);
 		}
 
 		static void PrintRdfItem(Rdf rdf, RdfItem item)
 		{
 			PrintHeader();
-			Console.Write(item.Description);
+			Console.Write(NormalizeContent(item.Description));
 			PrintFooter(item.Title, rdf.Channel.Title);
 		}
 
 		static void PrintRssItem( Rss rss, RssItem item )
 		{
 			PrintHeader();
-			Console.Write(item.Description);
+			Console.Write(NormalizeContent(item.Description));
 			PrintFooter(item.Title, rss.Channel.Title);
 		}
 
@@ -102,11 +103,29 @@ namespace news_of_the_day
 		{
 			Console.WriteLine("== News of the Day ==");
 		}
+
 		static void PrintFooter(string footer1, string footer2)
 		{
 			Console.WriteLine();
 			Console.WriteLine($"    :: {footer1}");
 			Console.WriteLine($"    :: {footer2}");
+		}
+
+		static string NormalizeContent(string content)
+		{
+			if ( string.IsNullOrEmpty(content)
+				|| string.IsNullOrWhiteSpace(content))
+			{
+				return string.Empty;
+			}
+
+			var strip = content.ItsRegExPatternMatchesAsArray(@"<[^>]*>");
+			foreach ( var s in strip )
+			{
+				content = content.ItsRemove(s);
+			}
+
+			return content;
 		}
 	}
 }
