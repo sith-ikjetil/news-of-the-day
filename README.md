@@ -1,4 +1,6 @@
 # news-of-the-day
+License: **GPL-3.0-or-later**
+
 Prints out a random news of the day.  
   
 Default URL is a BBC news URL.  
